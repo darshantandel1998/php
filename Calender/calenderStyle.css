@@ -1,0 +1,41 @@
+img {
+    width: 60%;
+    border: 5px solid black;
+    margin: 20px 20%;
+}
+
+.calender {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 0px;
+}
+
+table {
+    display: inline-table;
+    margin: 5px 15px 15px 15px;
+    ;
+    border-collapse: collapse;
+}
+
+caption {
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: 1px solid black;
+    background-color: rgb(95, 158, 160);
+}
+
+th {
+    background-color: rgba(95, 158, 160, 0.5);
+}
+
+th, td {
+    width: calc(100% / 7);
+    border: 1px solid black;
+}
+
+td:last-child {
+    color: red;
+}
