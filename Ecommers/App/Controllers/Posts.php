@@ -10,9 +10,4 @@ class Posts extends \Core\Controller
     {
         View::renderTemplate('Posts/index');
     }
-
-    public function editAction()
-    {
-        View::renderTemplate('Posts/edit', ['params' => $this->route_params, 'gets' => $_GET]);
-    }
 }

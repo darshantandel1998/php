@@ -74,6 +74,7 @@ class Router
     public function dispatch($url)
     {
         $url = $this->removeQueryStringVariables($url);
+        $url == '' ?: array_shift($_GET);
         if ($this->match($url)) {
             $controller = $this->params['controller'];
             $controller = $this->convertToStudlyCaps($controller);

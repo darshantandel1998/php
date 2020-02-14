@@ -1,0 +1,44 @@
+[14-Feb-2020 13:13:06 Asia/Kolkata] 
+Uncaught exception: 'Exception'
+Message: 'No route found for URL 'favicon.ico''
+Stack trace: #0 D:\htdocs\cybercom\php\PHP_MVC\public\index.php(17): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Throw in 'D:\htdocs\cybercom\php\PHP_MVC\Core\Router.php' on line 93
+
+
+[14-Feb-2020 13:19:47 Asia/Kolkata] 
+Uncaught exception: 'Error'
+Message: 'Call to a member function fetch() on bool'
+Stack trace: #0 D:\htdocs\cybercom\php\PHP_MVC\App\Controllers\Admin\Users.php(26): Core\Model::find('darshantandel19...', 'Email')
+#1 [internal function]: App\Controllers\Admin\Users->createAction()
+#2 D:\htdocs\cybercom\php\PHP_MVC\Core\Controller.php(19): call_user_func_array(Array, Array)
+#3 D:\htdocs\cybercom\php\PHP_MVC\Core\Router.php(87): Core\Controller->__call('create', Array)
+#4 D:\htdocs\cybercom\php\PHP_MVC\public\index.php(17): Core\Router->dispatch('admin/users/cre...')
+#5 {main}
+Throw in 'D:\htdocs\cybercom\php\PHP_MVC\Core\Model.php' on line 41
+
+
+[14-Feb-2020 13:20:59 Asia/Kolkata] 
+Uncaught exception: 'Exception'
+Message: 'No route found for URL 'favicon.ico''
+Stack trace: #0 D:\htdocs\cybercom\php\PHP_MVC\public\index.php(17): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Throw in 'D:\htdocs\cybercom\php\PHP_MVC\Core\Router.php' on line 93
+
+
+[14-Feb-2020 13:21:25 Asia/Kolkata] 
+Uncaught exception: 'Exception'
+Message: 'No route found for URL 'favicon.ico''
+Stack trace: #0 D:\htdocs\cybercom\php\PHP_MVC\public\index.php(17): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Throw in 'D:\htdocs\cybercom\php\PHP_MVC\Core\Router.php' on line 93
+
+
+[14-Feb-2020 13:58:13 Asia/Kolkata] 
+Uncaught exception: 'Exception'
+Message: 'No route found for URL 'favicon.ico''
+Stack trace: #0 D:\htdocs\cybercom\php\Ecommers\public\index.php(17): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Throw in 'D:\htdocs\cybercom\php\Ecommers\Core\Router.php' on line 93
+
+
