@@ -1,0 +1,119 @@
+[15-Feb-2020 13:54:49 Asia/Kolkata] 
+Uncaught exception: 'Exception'
+Message: 'No route found for URL 'favicon.ico''
+Stack trace: #0 D:\htdocs\cybercom\php\Ecommers\public\index.php(21): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Throw in 'D:\htdocs\cybercom\php\Ecommers\Core\Router.php' on line 93
+
+
+[15-Feb-2020 13:54:54 Asia/Kolkata] 
+Uncaught exception: 'Exception'
+Message: 'No route found for URL 'admin/cms/pages/edit/dfd''
+Stack trace: #0 D:\htdocs\cybercom\php\Ecommers\public\index.php(21): Core\Router->dispatch('admin/cms/pages...')
+#1 {main}
+Throw in 'D:\htdocs\cybercom\php\Ecommers\Core\Router.php' on line 93
+
+
+[15-Feb-2020 13:55:56 Asia/Kolkata] 
+Uncaught exception: 'Exception'
+Message: 'No route found for URL 'favicon.ico''
+Stack trace: #0 D:\htdocs\cybercom\php\Ecommers\public\index.php(21): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Throw in 'D:\htdocs\cybercom\php\Ecommers\Core\Router.php' on line 93
+
+
+[15-Feb-2020 13:56:00 Asia/Kolkata] 
+Uncaught exception: 'ParseError'
+Message: 'syntax error, unexpected 'echo' (T_ECHO)'
+Stack trace: #0 D:\htdocs\cybercom\php\Ecommers\vendor\composer\ClassLoader.php(322): Composer\Autoload\includeFile('D:\\htdocs\\cyber...')
+#1 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Controllers...')
+#2 [internal function]: spl_autoload_call('App\\Controllers...')
+#3 D:\htdocs\cybercom\php\Ecommers\Core\Router.php(82): class_exists('App\\Controllers...')
+#4 D:\htdocs\cybercom\php\Ecommers\public\index.php(21): Core\Router->dispatch('')
+#5 {main}
+Throw in 'D:\htdocs\cybercom\php\Ecommers\App\Controllers\CMS.php' on line 13
+
+
+[15-Feb-2020 13:56:01 Asia/Kolkata] 
+Uncaught exception: 'Exception'
+Message: 'No route found for URL 'favicon.ico''
+Stack trace: #0 D:\htdocs\cybercom\php\Ecommers\public\index.php(21): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Throw in 'D:\htdocs\cybercom\php\Ecommers\Core\Router.php' on line 93
+
+
+[15-Feb-2020 13:56:03 Asia/Kolkata] 
+Uncaught exception: 'Exception'
+Message: 'No route found for URL 'favicon.ico''
+Stack trace: #0 D:\htdocs\cybercom\php\Ecommers\public\index.php(21): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Throw in 'D:\htdocs\cybercom\php\Ecommers\Core\Router.php' on line 93
+
+
+[15-Feb-2020 13:56:10 Asia/Kolkata] 
+Uncaught exception: 'Exception'
+Message: 'No route found for URL 'favicon.ico''
+Stack trace: #0 D:\htdocs\cybercom\php\Ecommers\public\index.php(21): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Throw in 'D:\htdocs\cybercom\php\Ecommers\Core\Router.php' on line 93
+
+
+[15-Feb-2020 13:56:18 Asia/Kolkata] 
+Uncaught exception: 'Exception'
+Message: 'Controller class 'App\Controllers\Admin\Product' not found'
+Stack trace: #0 D:\htdocs\cybercom\php\Ecommers\public\index.php(21): Core\Router->dispatch('admin/product/a...')
+#1 {main}
+Throw in 'D:\htdocs\cybercom\php\Ecommers\Core\Router.php' on line 91
+
+
+[15-Feb-2020 13:56:24 Asia/Kolkata] 
+Uncaught exception: 'Twig\Error\LoaderError'
+Message: 'Unable to find template "Admin/Products/add.html.twig" (looked into: ../App/Views).'
+Stack trace: #0 D:\htdocs\cybercom\php\Ecommers\vendor\twig\twig\src\Loader\FilesystemLoader.php(131): Twig\Loader\FilesystemLoader->findTemplate('Admin/Products/...')
+#1 D:\htdocs\cybercom\php\Ecommers\vendor\twig\twig\src\Environment.php(261): Twig\Loader\FilesystemLoader->getCacheKey('Admin/Products/...')
+#2 D:\htdocs\cybercom\php\Ecommers\vendor\twig\twig\src\Environment.php(309): Twig\Environment->getTemplateClass('Admin/Products/...')
+#3 D:\htdocs\cybercom\php\Ecommers\vendor\twig\twig\src\Environment.php(277): Twig\Environment->load('Admin/Products/...')
+#4 D:\htdocs\cybercom\php\Ecommers\Core\View.php(41): Twig\Environment->render('Admin/Products/...', Array)
+#5 D:\htdocs\cybercom\php\Ecommers\App\Controllers\Admin\Products.php(16): Core\View::renderTemplate('Admin/Products/...')
+#6 [internal function]: App\Controllers\Admin\Products->addAction()
+#7 D:\htdocs\cybercom\php\Ecommers\Core\Controller.php(21): call_user_func_array(Array, Array)
+#8 D:\htdocs\cybercom\php\Ecommers\Core\Router.php(87): Core\Controller->__call('add', Array)
+#9 D:\htdocs\cybercom\php\Ecommers\public\index.php(21): Core\Router->dispatch('admin/products/...')
+#10 {main}
+Throw in 'D:\htdocs\cybercom\php\Ecommers\vendor\twig\twig\src\Loader\FilesystemLoader.php' on line 227
+
+
+[15-Feb-2020 13:56:24 Asia/Kolkata] 
+Uncaught exception: 'Twig\Error\LoaderError'
+Message: 'Unable to find template "Admin/Products/add.html.twig" (looked into: ../App/Views).'
+Stack trace: #0 D:\htdocs\cybercom\php\Ecommers\vendor\twig\twig\src\Loader\FilesystemLoader.php(131): Twig\Loader\FilesystemLoader->findTemplate('Admin/Products/...')
+#1 D:\htdocs\cybercom\php\Ecommers\vendor\twig\twig\src\Environment.php(261): Twig\Loader\FilesystemLoader->getCacheKey('Admin/Products/...')
+#2 D:\htdocs\cybercom\php\Ecommers\vendor\twig\twig\src\Environment.php(309): Twig\Environment->getTemplateClass('Admin/Products/...')
+#3 D:\htdocs\cybercom\php\Ecommers\vendor\twig\twig\src\Environment.php(277): Twig\Environment->load('Admin/Products/...')
+#4 D:\htdocs\cybercom\php\Ecommers\Core\View.php(41): Twig\Environment->render('Admin/Products/...', Array)
+#5 D:\htdocs\cybercom\php\Ecommers\App\Controllers\Admin\Products.php(16): Core\View::renderTemplate('Admin/Products/...')
+#6 [internal function]: App\Controllers\Admin\Products->addAction()
+#7 D:\htdocs\cybercom\php\Ecommers\Core\Controller.php(21): call_user_func_array(Array, Array)
+#8 D:\htdocs\cybercom\php\Ecommers\Core\Router.php(87): Core\Controller->__call('add', Array)
+#9 D:\htdocs\cybercom\php\Ecommers\public\index.php(21): Core\Router->dispatch('admin/products/...')
+#10 {main}
+Throw in 'D:\htdocs\cybercom\php\Ecommers\vendor\twig\twig\src\Loader\FilesystemLoader.php' on line 227
+
+
+[15-Feb-2020 13:56:29 Asia/Kolkata] 
+Uncaught exception: 'Twig\Error\LoaderError'
+Message: 'Unable to find template "Admin/Products/add.html.twig" (looked into: ../App/Views).'
+Stack trace: #0 D:\htdocs\cybercom\php\Ecommers\vendor\twig\twig\src\Loader\FilesystemLoader.php(131): Twig\Loader\FilesystemLoader->findTemplate('Admin/Products/...')
+#1 D:\htdocs\cybercom\php\Ecommers\vendor\twig\twig\src\Environment.php(261): Twig\Loader\FilesystemLoader->getCacheKey('Admin/Products/...')
+#2 D:\htdocs\cybercom\php\Ecommers\vendor\twig\twig\src\Environment.php(309): Twig\Environment->getTemplateClass('Admin/Products/...')
+#3 D:\htdocs\cybercom\php\Ecommers\vendor\twig\twig\src\Environment.php(277): Twig\Environment->load('Admin/Products/...')
+#4 D:\htdocs\cybercom\php\Ecommers\Core\View.php(41): Twig\Environment->render('Admin/Products/...', Array)
+#5 D:\htdocs\cybercom\php\Ecommers\App\Controllers\Admin\Products.php(16): Core\View::renderTemplate('Admin/Products/...')
+#6 [internal function]: App\Controllers\Admin\Products->addAction()
+#7 D:\htdocs\cybercom\php\Ecommers\Core\Controller.php(21): call_user_func_array(Array, Array)
+#8 D:\htdocs\cybercom\php\Ecommers\Core\Router.php(87): Core\Controller->__call('add', Array)
+#9 D:\htdocs\cybercom\php\Ecommers\public\index.php(21): Core\Router->dispatch('admin/products/...')
+#10 {main}
+Throw in 'D:\htdocs\cybercom\php\Ecommers\vendor\twig\twig\src\Loader\FilesystemLoader.php' on line 227
+
+

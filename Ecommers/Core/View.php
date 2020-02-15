@@ -14,7 +14,7 @@ class View
             require $file;
         else
             throw new \Exception("'$file' not found");
-        unset($_SESSION['error']);
+        unset($_SESSION['alert']);
     }
 
     public static function renderTemplate($template, $args = [])
@@ -24,16 +24,21 @@ class View
             $loader = new \Twig\Loader\FilesystemLoader('../App/Views');
             $twig = new \Twig\Environment($loader);
             $function = new \Twig\TwigFunction('static', function($path) {
-                return Config::BASE_DIR . "\\" . $path;
+                return Config::BASE_DIR . $path;
+            });
+            $twig->addFunction($function);
+            $function = new \Twig\TwigFunction('url', function($path) {
+                return Config::BASE_DIR . $path;
             });
             $twig->addFunction($function);
             $twig->addGlobal('GET', $_GET);
             $twig->addGlobal('POST', $_POST);
             $twig->addGlobal('SESSION', $_SESSION);
             $twig->addGlobal('COOKIE', $_COOKIE);
+            $twig->addGlobal('base_url', Config::BASE_DIR);
         }
         $template .= '.html.twig';
         echo $twig->render($template, $args);
-        unset($_SESSION['error']);
+        unset($_SESSION['alert']);
     }
 }

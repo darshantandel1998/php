@@ -12,8 +12,11 @@
 </head>
 
 <body>
-	<div class="container">
-		{% block body %}{% endblock %}
+	<div class="container-fluid">
+		{% if SESSION.alert %}
+		<div class="{{ "m-2 mx-5 " ~ SESSION.alert.class }}">{{ SESSION.alert.msg }}</div>
+		{% endif %}
+		{% block content %}{% endblock %}
 	</div>
 
 	<script src={{ static('vendor/bootstrap/js/bootstrap.min.js') }}></script>

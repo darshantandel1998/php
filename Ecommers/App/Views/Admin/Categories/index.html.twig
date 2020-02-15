@@ -1,0 +1,55 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Admin | Categories{% endblock %}
+
+{% block content %}
+<div class="mx-5 m-3">
+    <div class="d-flex justify-content-between mx-5 mb-2">
+        <h1>Categories</h1>
+        <a class="btn btn-primary h-100 my-auto" href={{ url('admin/categories/add') }}>Add Categories</a>
+    </div>
+    <div class="{{ SESSION.error.class }}" role="alert">{{ SESSION.error.msg }}</div>
+    {% if categories %}
+    <div class="d-flex justify-content-center">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Category Name</th>
+                    <th>Url Key</th>
+                    <th>Image</th>
+                    <th>Status</th>
+                    <th>Description</th>
+                    <th>Parent Category</th>
+                    <th>Created At</th>
+                    <th>Updated At</th>
+                    <th colspan="2">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for category in categories %}
+                <tr>
+                    <td>{{ category.Category_Name }}</td>
+                    <td>{{ category.Url_Key }}</td>
+                    <td class="text-center"><img class="img-thumbnail" src={{ url("images/category/" ~ category.Image) }}></td>
+                    <td>{% if category.Status == '0' %}<a class="btn btn-danger">{% endif %}</td>
+                    <td>{{ category.Description }}</td>
+                    <td>{{ category.Parent_Category_ID }}</td>
+                    <td>{{ category.Created_At }}</td>
+                    <td>{{ category.Updated_At }}</td>
+                    <td>
+                        <a class="btn btn-primary" href={{ url('admin/categories/edit/') ~ categories.Id }}>Update</a>
+                        <form class="d-inline" action={{ url('admin/categories/delete') }} method="POST">
+                            <input type="hidden" name="delete" value={{ category.Id }}>
+                            <button class="btn btn-danger" type="submit">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% else %}
+    <h5 class="alert alert-danger text-center mt-5">Categories not found</h5>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Admin | Categories{% endblock %}
+
+{% block content %}
+<div class="mx-5 m-3">
+    <div class="text-center mx-5 mb-2">
+        <h1>Add Categories</h1>
+    </div>
+    <div class="{{ SESSION.error.class }}" role="alert">{{ SESSION.error.msg }}</div>
+    <form id="categoryForm" class="form-horizontal" action="{{ url('admin/categories/addData') }}" method="POST">
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="Category_Name">Category Name</label>
+            <div class="col-md-4">
+                <input id="Category_Name" name="Category_Name" type="text" placeholder="" class="form-control input-md"
+                    required="">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="Image">Image</label>
+            <div class="col-md-4">
+                <input id="Image" name="Image" class="input-file" type="file" required="">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="Status">Status</label>
+            <div class="col-md-4">
+                <label class="radio-inline" for="Status-0">
+                    <input type="radio" name="Status" id="Status-0" value="1" required="">
+                    Unblock
+                </label>
+                <label class="radio-inline" for="Status-1">
+                    <input type="radio" name="Status" id="Status-1" value="0" required="">
+                    Block
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="Description">Description</label>
+            <div class="col-md-4">
+                <textarea class="form-control" id="Description" name="Description" required=""></textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="Parent_Category">Parent Category</label>
+            <div class="col-md-4">
+                <select id="Parent_Category" name="Parent_Category" class="form-control" multiple="multiple"
+                    required="">
+                    <option value="1">Option one</option>
+                    <option value="2">Option two</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-4 control-label" for=""></label>
+            <div class="col-md-8">
+                <button id="" name="" type="submit" class="btn btn-primary">Add Category</button>
+                <a href="{{ url('admin/categories') }}" class="btn btn-primary">Back</a>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

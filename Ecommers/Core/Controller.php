@@ -2,6 +2,8 @@
 
 namespace Core;
 
+use App\Config;
+
 abstract class Controller
 {
     protected $route_params = [];
@@ -29,5 +31,15 @@ abstract class Controller
 
     protected function after()
     {
+    }
+
+    protected function redirect($path = '')
+    {
+        header('Location: ' . Config::BASE_DIR . $path);
+    }
+
+    protected function alert($msg, $class='')
+    {
+        $_SESSION['alert'] = ['msg' => $msg, 'class' => $class];
     }
 }
