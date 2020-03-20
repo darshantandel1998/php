@@ -1,0 +1,53 @@
+{% extends "userBase.html.twig" %}
+
+{% block title %}
+	{{ product.Product_Name }}
+	Product
+{% endblock %}
+
+{% block content %}
+	{% if product %}
+		<div class="container-fluid bg-light p-2">
+			<div class="container">
+				<div>
+					{% if product.Parent_Category_Name %}
+						<a href="{{ url('category/view/' ~ product.Parent_Category_Url_Key) }}">{{ product.Parent_Category_Name }}</a>&nbsp;/&nbsp;
+					{% endif %}
+					{% if product.Category_Name %}
+						<a href="{{ url('category/view/' ~ product.Category_Url_Key) }}">{{ product.Category_Name }}</a>&nbsp;/&nbsp;
+					{% endif %}
+					<a href="{{ url('product/view/' ~ product.Url_Key) }}">{{ product.Product_Name }}</a>
+				</div>
+			</div>
+		</div>
+		<div class="container my-5">
+			<div class="row">
+				<div class="col-md-5">
+					<img class="img-fluid rounded img-thumbnail d-block m-auto" src={{ url("images/products/" ~ product.Image) }} alt="{{ product.Product_Name }} Image">
+				</div>
+				<div class="col-md-7">
+					<h1 class="mb-2">{{ product.Product_Name }}</h1>
+					<h3 class="h3 text-primary">
+						<i class="fas fa-rupee-sign"></i>
+						{{ product.Price }}
+					</h3>
+					<h4>Description</h4>
+					<p>{{ product.Description }}</p>
+					<h5>Short Description</h5>
+					<p>{{ product.Short_Description }}</p>
+					<h5>SKU</h5>
+					<p>{{ product.SKU }}</p>
+					<hr>
+					{% if product.Stock > 0 %}
+						<button class="btn btn-lg btn-primary">BUY NOW</button>
+						<button class="btn btn-lg btn-outline-primary">ADD TO CART</button>
+					{% else %}
+						<button class="btn btn-lg btn-danger" disabled>OUT OF STOCK</button>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	{% else %}
+		<h5 class="alert alert-danger text-center m-5">Product not found</h5>
+	{% endif %}
+{% endblock %}

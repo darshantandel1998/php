@@ -6,6 +6,7 @@
 	<title>{% block title %}{% endblock %}</title>
 	<meta charset='utf-8'>
 	<meta name='viewport' content='width=device-width, initial-scale=1'>
+	<link rel="stylesheet" href={{ url('vendor/jquery/jquery-ui.min.css') }}>
 	<link rel="stylesheet" href={{ url('vendor/bootstrap/css/bootstrap.min.css') }}>
 	<link rel="stylesheet" href={{ url('css/theme.css') }}>
 	{% endblock %}
@@ -21,6 +22,8 @@
 	</div>
 	{% endblock %}
 
+	<script src={{ url('vendor/jquery/jquery-3.4.1.js') }}></script>
+	<script src={{ url('vendor/jquery/jquery-ui.min.js') }}></script>
 	<script src={{ url('vendor/bootstrap/js/bootstrap.min.js') }}></script>
 	<script src={{ url('js/app.js') }}></script>
 </body>

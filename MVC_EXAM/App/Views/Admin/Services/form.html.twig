@@ -1,0 +1,83 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Admin | Service{% endblock %}
+
+{% block content %}
+<div class="mx-5 m-3">
+    <div class="text-center mx-5 mb-2">
+        <h1>{{ type }} Service</h1>
+    </div>
+    <div class="col-md-4 mx-auto">
+        <form id="serviceForm" class="form-horizontal" action="{{ url('admin/services/' ~ type|lower ~ 'Data') }}"
+            method="POST">
+            <input type="hidden" name="ServiceId" value={{ service.ServiceId }}>
+            <div class="form-group">
+                <label class="control-label" for="Title">Title</label>
+                <input id="Title" name="Title" type="text" value="{{ service.Title }}" class="form-control input-md"
+                    required="">
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="VehicleIssue">Vehicle Issue</label>
+                <textarea class="form-control" id="VehicleIssue" name="VehicleIssue"
+                    required="">{{ service.VehicleIssue }}</textarea>
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="Status">Status</label>
+                <label class="radio-inline" for="Status-0">
+                    <input type="radio" name="Status" id="Status-0" value="1" {% if service.Status %}
+                        {% if service.Status == "1" %}checked="checked" {% endif %} {% else %} checked="checked"
+                        {% endif %}>
+                    Approve
+                </label>
+                <label class="radio-inline" for="Status-1">
+                    <input type="radio" name="Status" id="Status-1" value="0"
+                        {% if service.Status == "0" %}checked="checked" {% endif %}>
+                    Disapprove
+                </label>
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="VehicleNo">Vehicle Number</label>
+                <input id="VehicleNo" name="VehicleNo" type="text" value="{{ service.VehicleNo }}"
+                    class="form-control input-md" required="">
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="UserLicenseNo">User License Number</label>
+                <input id="UserLicenseNo" name="UserLicenseNo" type="text" value="{{ service.UserLicenseNo }}"
+                    class="form-control input-md" required="">
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="ServiceCenter">Service Center</label>
+                {% set serviceCenterData = ['Navsari', 'Surat', 'Vadodara', 'Ahmedabad'] %}
+                <select id="ServiceCenter" name="ServiceCenter" class="form-control" required>
+                    <option value="">Select Service Center</option>
+                    {% for serviceCenter in serviceCenterData %}
+                    <option value="{{ serviceCenter }}" {% if service.ServiceCenter == serviceCenter %}selected=""
+                        {% endif %}>
+                        {{ serviceCenter }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="Date">Date</label>
+                <input id="Date" name="Date" type="text" placeholder="YYYY-MM-DD" value="{{ service.Date }}"
+                    class="form-control input-md" required>
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="Timeslot">Timeslot</label>
+                {% set timeslotData = ['9-10', '10-11', '11-12', '12-1', '1-2', '2-3', '3-4', '4-5', '5-6'] %}
+                <select id="Timeslot" name="Timeslot" class="form-control" required>
+                    <option value="">Select Timeslot</option>
+                    {% for timeslot in timeslotData %}
+                    <option value="{{ timeslot }}" {% if service.Timeslot == timeslot %}selected="" {% endif %}>
+                        {{ timeslot }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <button id="" name="" type="submit" class="btn btn-primary">{{ type }} Service</button>
+                <a href="{{ url('admin/services') }}" class="btn btn-primary">Back</a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

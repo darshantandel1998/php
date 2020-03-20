@@ -28,20 +28,20 @@ abstract class Controller
     protected function before()
     {
         if (array_key_exists('namespace', $this->route_params)) {
-            $namesapce = explode("\\", $this->route_params['namespace'], 2)[0];
-            if ($namespace = "Admin") {
+            $namespace = explode("\\", $this->route_params['namespace'], 2)[0];
+            if ($namespace == "Admin") {
                 if (isset($_SESSION['isAdminLogin']))
                     return $_SESSION['isAdminLogin'] == 'true' ? true : false;
                 else {
-                    $this->redirect('');
+                    $this->redirect('adminLogin');
                     return false;
                 }
             }
-            if ($namespace = "User") {
+            if ($namespace == "User") {
                 if (isset($_SESSION['isUserLogin']))
-                    return $_SESSION['isUserLogin'] == 'true' ? true : false;
+                    return $_SESSION['isUserLogin'] > 0 ? true : false;
                 else {
-                    $this->redirect('');
+                    $this->redirect('login');
                     return false;
                 }
             }
@@ -50,6 +50,15 @@ abstract class Controller
 
     protected function after()
     {
+    }
+
+    protected function getValue($field)
+    {
+        return isset($_POST[$field]) && !empty($_POST[$field])
+            ? $_POST[$field]
+            : (isset($_SESSION[$field]) && !empty($_SESSION[$field])
+                ? $_SESSION[$field]
+                : '');
     }
 
     protected function redirect($path = '')

@@ -10,8 +10,11 @@ $router->add('admin/{controller}', ['action' => 'index', 'namespace' => 'Admin']
 $router->add('admin/{controller}/{action}', ['namespace' => 'Admin']);
 $router->add('admin/{controller}/{action}/{id:\d+}', ['namespace' => 'Admin']);
 
-$router->add('{controller}', ['action' => 'index']);
-$router->add('{controller}/{action}');
-$router->add('{controller}/{action}/{id:\d+}');
+$router->add('user/{controller}', ['action' => 'index', 'namespace' => 'User']);
+$router->add('user/{controller}/{action}', ['namespace' => 'User']);
+$router->add('user/{controller}/{action}/{id:\d+}', ['namespace' => 'User']);
+
+$router->add('', ['controller' => 'Home', 'action' => 'login']);
+$router->add('{action}', ['controller' => 'Home']);
 
 $router->dispatch($_SERVER['QUERY_STRING']);

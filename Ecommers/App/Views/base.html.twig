@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		{% block head %}
+			<title>
+				{% block title %}{% endblock %}
+			</title>
+			<meta charset='utf-8'>
+			<meta name='viewport' content='width=device-width, initial-scale=1'>
+			<link rel="stylesheet" href={{ url('vendor/jquery/jquery-ui.min.css') }}>
+			<link rel="stylesheet" href={{ url('vendor/bootstrap/css/bootstrap.min.css') }}>
+			<link rel="stylesheet" href={{ url('vendor/fontawesome/css/all.css') }}>
+			<link rel="stylesheet" href={{ url('css/theme.css') }}>
+		{% endblock %}
+	</head>
+
+	<body>
+		<div class="container-fluid p-0">
+
+			{% if SESSION.alert %}
+				<div class="{{ "m-2 mx-5 " ~ SESSION.alert.class }}">{{ SESSION.alert.msg }}</div>
+			{% endif %}
+
+			{% block content %}{% endblock %}
+
+		</div>
+
+		<script src={{ url('vendor/jquery/jquery-3.4.1.js') }}></script>
+		<script src={{ url('vendor/jquery/jquery-ui.min.js') }}></script>
+		<script src={{ url('vendor/bootstrap/js/bootstrap.min.js') }}></script>
+		<script src={{ url('js/app.js') }}></script>
+	</body>
+
+</html>
