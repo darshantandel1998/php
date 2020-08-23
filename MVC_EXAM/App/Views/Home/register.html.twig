@@ -1,0 +1,74 @@
+{% extends "base.html.twig" %}
+
+{% block title %}User | Register{% endblock %}
+
+{% block content %}
+<div class="mx-5 m-3">
+    <div class="text-center mx-5 mb-2">
+        <h1>{{ type }} User</h1>
+    </div>
+    <div class="col-md-4 mx-auto">
+        <form id="registerForm" class="form-horizontal" action="{{ url('registerData') }}" method="POST">
+            <div class="form-group">
+                <label class="control-label" for="user[FirstName]">First Name:</label>
+                <input id="user[FirstName]" name="user[FirstName]" type="text" value="{{ user.FirstName }}"
+                    class="form-control input-md" required="">
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="user[LastName]">Last Name:</label>
+                <input id="user[LastName]" name="user[LastName]" type="text" value="{{ user.LastName }}"
+                    class="form-control input-md" required="">
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="user[Email]">Email:</label>
+                <input id="user[Email]" name="user[Email]" type="email" value="{{ user.Email }}" class="form-control input-md"
+                    required="">
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="user[Password]">Password:</label>
+                <input id="user[Password]" name="user[Password]" type="password" value="{{ user.Paswword }}"
+                    class="form-control input-md" required="">
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="rePassword">Confirm Password:</label>
+                <input id="rePassword" name="rePassword" type="password"
+                    class="form-control input-md" required="">
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="user[PhoneNo]">Phone:</label>
+                <input id="user[PhoneNo]" name="user[PhoneNo]" type="text" value="{{ user.PhoneNo }}" class="form-control input-md"
+                    required="">
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="address[Street]">Street:</label>
+                <input id="address[Street]" name="address[Street]" type="text" value="{{ userAddress.Street }}"
+                    class="form-control input-md" required="">
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="address[City]">City:</label>
+                <input id="address[City]" name="address[City]" type="text" value="{{ userAddress.City }}"
+                    class="form-control input-md" required="">
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="address[State]">State:</label>
+                <input id="address[State]" name="address[State]" type="text" value="{{ userAddress.State }}"
+                    class="form-control input-md" required="">
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="address[ZipCode]">Zip Code:</label>
+                <input id="address[ZipCode]" name="address[ZipCode]" type="text" value="{{ userAddress.ZipCode }}"
+                    class="form-control input-md" required="">
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="address[Country]">Country:</label>
+                <input id="address[Country]" name="address[Country]" type="text" value="{{ userAddress.Country }}"
+                    class="form-control input-md" required="">
+            </div>
+            <div class="form-group">
+                <button id="" name="" type="submit" class="btn btn-primary">{{ type }} User</button>
+                <a href="{{ url('login') }}" class="btn btn-primary">Back</a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

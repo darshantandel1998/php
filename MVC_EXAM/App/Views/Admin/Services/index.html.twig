@@ -1,0 +1,69 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Admin | Services{% endblock %}
+
+{% block content %}
+<div class="mx-5 m-3">
+    <div class="d-flex justify-content-between mx-5 mb-2">
+        <h1>Services</h1>
+        <div class="d-flex h-100 my-auto">
+            <form action="{{ url('adminLogout') }}" method="POST">
+                <button class="btn btn-primary">Logout</button>
+            </form>
+        </div>
+    </div>
+    {% if services %}
+    <div class="d-flex justify-content-center">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Service ID</th>
+                    <th>User ID</th>
+                    <th>Title</th>
+                    <th>Vehicle No</th>
+                    <th>User License No</th>
+                    <th>Date</th>
+                    <th>Timeslot</th>
+                    <th>Vehicle Issue</th>
+                    <th>Service Center</th>
+                    <th>Status</th>
+                    <th>Created Date</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for service in services %}
+                <tr>
+                    <td>{{ service.ServiceId }}</td>
+                    <td>{{ service.UserId }}</td>
+                    <td>{{ service.Title }}</td>
+                    <td>{{ service.VehicleNo }}</td>
+                    <td>{{ service.UserLicenseNo }}</td>
+                    <td>{{ service.Date }}</td>
+                    <td>{{ service.Timeslot }}</td>
+                    <td>{{ service.VehicleIssue }}</td>
+                    <td>{{ service.ServiceCenter }}</td>
+                    <td>{% if service.Status == 1 %}<button class="btn btn btn-success"
+                            disabled>Approve</button>{% else %}<button class="btn btn btn-danger"
+                            disabled>Disapprove</button>{% endif %}</td>
+                    <td>{{ service.CreatedDate }}</td>
+                    <td>
+                        <div class="d-flex">
+                            <a class="btn btn-primary mr-1"
+                                href={{ url('admin/services/edit/') ~ service.ServiceId }}>Update</a>
+                            <form action={{ url('admin/services/delete') }} method="POST">
+                                <input type="hidden" name="delete" value={{ service.ServiceId }}>
+                                <button class="btn btn-danger" type="submit">Delete</button>
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% else %}
+    <h5 class="alert alert-danger text-center mt-5">Services not found</h5>
+    {% endif %}
+</div>
+{% endblock %}

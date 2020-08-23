@@ -1,0 +1,15 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Fatal Error{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Fatal Error</h1>
+    <P>Uncaught exception: '{{ exception.class }}'</P>
+    <p>Message: '{{ exception.message }}'</P>
+    <p>Stack trace:
+        <pre>{{ exception.stackTrace }}</pre>
+    </p>
+    <p>Throw in '{{ exception.file }}' on line {{ exception.line }}</p>
+</div>
+{% endblock %}

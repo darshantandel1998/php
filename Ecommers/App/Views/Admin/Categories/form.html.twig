@@ -1,0 +1,70 @@
+{% extends "adminBase.html.twig" %}
+
+{% block title %}
+	Admin | Category
+{% endblock %}
+
+{% block content %}
+	<div class="mx-5 m-3">
+		<div class="text-center mx-5 mb-2">
+			<h1>{{ type }}
+				Category</h1>
+		</div>
+		<form id="categoryForm" class="form-horizontal" action="{{ url('admin/categories/' ~ type|lower ~ 'Data') }}" method="POST" enctype="multipart/form-data">
+			<input type="hidden" name="Id" value="{{ category.Id }}">
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="Category_Name">Category Name</label>
+				<div class="col-md-4">
+					<input id="Category_Name" name="Category_Name" type="text" value="{{ category.Category_Name }}" class="form-control input-md" required="">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="Parent_Category_Id">Parent Category</label>
+				<div class="col-md-4">
+					<select id="Parent_Category_Id" name="Parent_Category_Id" class="form-control" required>
+						<option value="0">No Parent</option>
+						{% for parentCategory in parentCategories %}
+							<option value="{{ parentCategory.Id }}" {% if parentCategory.Id == category.Parent_Category_Id %} selected {% endif %}>{{ parentCategory.Category_Name }}</option>
+						{% endfor %}
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="Image">Image</label>
+				<div class="col-md-4 d-flex">
+					<input id="Image" name="Image" class="input-file" type="file" {% if type == "Add" %} required {% endif %}>
+					{% if category.Image and type == "Edit" %}
+						<img class="img-thumbnail" src={{ url("images/categories/" ~ category.Image) }}>
+					{% endif %}
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="Status">Status</label>
+				<div class="col-md-4">
+					<label class="radio-inline" for="Status-0">
+						<input type="radio" name="Status" id="Status-0" value="1" {% if category.Status %} {% if category.Status == "1" %} checked="checked" {% endif %} {% else %} checked="checked" {% endif %}>
+						Unblock
+					</label>
+					<label class="radio-inline" for="Status-1">
+						<input type="radio" name="Status" id="Status-1" value="0" {% if category.Status == "0" %} checked="checked" {% endif %}>
+						Block
+					</label>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="Description">Description</label>
+				<div class="col-md-4">
+					<textarea class="form-control" id="Description" name="Description" required>{{ category.Description }}</textarea>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-md-4 control-label" for=""></label>
+				<div class="col-md-8">
+					<button id="" name="" type="submit" class="btn btn-primary">{{ type }}
+						Category</button>
+					<a href="{{ url('admin/categories') }}" class="btn btn-primary">Back</a>
+				</div>
+			</div>
+		</form>
+	</div>
+{% endblock %}
